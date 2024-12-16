@@ -16,6 +16,15 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
             origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path
         }
     }
+
+    origin {
+        domain_name = aws_s3_bucket.s3_pre_pro.bucket_regional_domain_name
+        origin_id   = local.s3_origin_staging_id
+
+        s3_origin_config {
+            origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path
+        }
+    }
     enabled = true
     is_ipv6_enabled     = true
     default_root_object = "index.html"

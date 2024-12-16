@@ -28,7 +28,7 @@ exports.handler = async (event, context, callback) => {
             s3: {
               authMethod: "origin-access-identity",
               domainName: "terraform-s3-cloudfront-pre-production.s3.amazonaws.com",
-              region: "us-west-2",
+              region: "ap-southeast-2",
               path: "",
             },
           };

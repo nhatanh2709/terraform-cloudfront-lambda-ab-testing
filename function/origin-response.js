@@ -14,7 +14,7 @@ exports.handler = (event, context, callback) => {
   
         if (requestHeaders.cookie[i].value.indexOf("X-Redirect-Flag=Pre-Pro") >= 0) {
           response.headers["set-cookie"] = [{ key: "Set-Cookie", value: `X-Redirect-Flag=Pre-Pro; Path=/` }];
-          callback(null, response);
+          callback(null, response); 
           return;
         }
       }
